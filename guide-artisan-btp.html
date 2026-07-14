@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le chantier de votre visibilité — Guide artisans BTP</title>
+<style>
+  :root{
+    --ink:#0F1216;
+    --panel:#171B21;
+    --panel-2:#1E232B;
+    --line:#2B323C;
+    --blue:#2E7CFF;
+    --yellow:#FFC72C;
+    --text:#E7EAEF;
+    --muted:#8A93A3;
+    --mono: 'JetBrains Mono', 'Courier New', monospace;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--text);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+    margin:0;
+  }
+  .mono{font-family:var(--mono);}
+  .wrap{max-width:820px; margin:0 auto; padding:0 24px;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:100px 24px 70px;
+    border-bottom:1px solid var(--line);
+    background:
+      linear-gradient(180deg, rgba(46,124,255,0.08), transparent 60%),
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.02) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.02) 40px);
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--yellow);
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    border:1px solid rgba(255,199,44,0.35);
+    padding:6px 12px;
+    border-radius:2px;
+    margin-bottom:24px;
+  }
+  .eyebrow::before{content:"●"; font-size:8px;}
+  .hero h1{
+    font-size:clamp(32px, 5.5vw, 52px);
+    line-height:1.08;
+    max-width:11ch;
+  }
+  .hero h1 span{color:var(--blue);}
+  .hero p.lead{
+    margin-top:22px;
+    max-width:52ch;
+    color:var(--muted);
+    font-size:17px;
+  }
+
+  /* PROGRESS / TABLE OF CONTENTS - signature element */
+  .toc{
+    margin:0 auto;
+    max-width:820px;
+    padding:28px 24px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+    border-bottom:1px solid var(--line);
+  }
+  .toc a{
+    flex:1 1 140px;
+    text-decoration:none;
+    color:var(--muted);
+    font-family:var(--mono);
+    font-size:12px;
+    padding:10px 14px;
+    border-left:2px solid var(--line);
+    transition:color .15s, border-color .15s;
+  }
+  .toc a:hover{color:var(--yellow); border-left-color:var(--yellow);}
+  .toc a .num{color:var(--blue); margin-right:6px;}
+
+  /* SECTIONS as spec sheets */
+  section.card{
+    position:relative;
+    margin:56px auto;
+    max-width:820px;
+    padding:36px 32px;
+    background:var(--panel);
+    border:1px solid var(--line);
+  }
+  section.card::before, section.card::after,
+  section.card .br-tl, section.card .br-br{
+    content:"";
+    position:absolute;
+    width:16px; height:16px;
+    border:2px solid var(--yellow);
+  }
+  section.card::before{ top:-1px; left:-1px; border-right:none; border-bottom:none; }
+  section.card::after{ bottom:-1px; right:-1px; border-left:none; border-top:none; }
+
+  .tag{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--blue);
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+    display:block;
+  }
+  section.card h2{
+    font-size:26px;
+    margin-bottom:18px;
+    color:var(--text);
+  }
+  section.card p{color:#C7CCD6; font-size:15.5px;}
+  section.card ul{padding-left:0; list-style:none; margin:18px 0 0;}
+  section.card li{
+    padding:14px 0 14px 30px;
+    border-top:1px solid var(--line);
+    position:relative;
+    color:#C7CCD6;
+    font-size:15px;
+  }
+  section.card li:last-child{border-bottom:1px solid var(--line);}
+  section.card li::before{
+    content:"▸";
+    position:absolute;
+    left:0;
+    color:var(--yellow);
+  }
+  section.card li strong{color:var(--text);}
+
+  /* Reseau selector table-ish */
+  .reseau-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-top:20px;
+  }
+  @media(max-width:560px){ .reseau-grid{grid-template-columns:1fr;} }
+  .reseau{
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    padding:18px;
+  }
+  .reseau .name{
+    font-family:var(--mono);
+    color:var(--yellow);
+    font-size:13px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    margin-bottom:8px;
+    display:block;
+  }
+  .reseau p{margin:0; font-size:14px; color:var(--muted);}
+
+  /* Rythme bar */
+  .cadence{
+    display:flex;
+    gap:8px;
+    margin-top:20px;
+  }
+  .cadence .day{
+    flex:1;
+    text-align:center;
+    padding:14px 4px;
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--muted);
+    border:1px solid var(--line);
+    background:var(--panel-2);
+  }
+  .cadence .day.on{
+    color:var(--ink);
+    background:var(--blue);
+    border-color:var(--blue);
+    font-weight:600;
+  }
+
+  /* Erreurs */
+  .erreur{
+    display:flex;
+    gap:16px;
+    padding:16px 0;
+    border-top:1px solid var(--line);
+  }
+  .erreur:last-child{border-bottom:1px solid var(--line);}
+  .erreur .x{
+    font-family:var(--mono);
+    color:#FF5C5C;
+    font-size:18px;
+    flex-shrink:0;
+  }
+  .erreur div p{margin:4px 0 0; color:var(--muted); font-size:14px;}
+  .erreur div strong{color:var(--text); font-size:15.5px;}
+
+  /* CTA */
+  .cta{
+    max-width:820px;
+    margin:70px auto 100px;
+    padding:44px 32px;
+    background:linear-gradient(135deg, rgba(46,124,255,0.14), rgba(255,199,44,0.06));
+    border:1px solid var(--blue);
+    text-align:left;
+  }
+  .cta .tag{color:var(--yellow);}
+  .cta h2{font-size:28px; margin-bottom:14px;}
+  .cta p{color:#C7CCD6; font-size:16px; max-width:56ch;}
+  .cta .steps{
+    margin-top:24px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .cta .steps div{
+    font-family:var(--mono);
+    font-size:13.5px;
+    color:var(--text);
+    padding:10px 14px;
+    background:rgba(0,0,0,0.25);
+    border-left:2px solid var(--blue);
+  }
+  .cta .steps div b{color:var(--yellow);}
+  .whatsapp-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:26px;
+    padding:14px 26px;
+    background:var(--yellow);
+    color:var(--ink);
+    text-decoration:none;
+    font-family:var(--mono);
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    border:none;
+    transition:transform .15s, background .15s;
+  }
+  .whatsapp-btn:hover{background:#fff; transform:translateX(2px);}
+
+  footer{
+    text-align:center;
+    padding:30px 24px 50px;
+    color:var(--muted);
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.04em;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Guide artisan · réseaux sociaux</span>
+    <h1>Vos chantiers parlent.<br><span>Vos réseaux, pas encore.</span></h1>
+    <p class="lead">Un guide court et concret pour utiliser Facebook, Instagram ou LinkedIn quand on est artisan ou entreprise du BTP — sans y passer vos soirées.</p>
+  </div>
+</div>
+
+<nav class="toc wrap">
+  <a href="#pourquoi"><span class="num">01</span>Pourquoi</a>
+  <a href="#reseau"><span class="num">02</span>Quel réseau</a>
+  <a href="#quoi"><span class="num">03</span>Quoi publier</a>
+  <a href="#rythme"><span class="num">04</span>Rythme</a>
+  <a href="#erreurs"><span class="num">05</span>Erreurs</a>
+</nav>
+
+<section class="card" id="pourquoi">
+  <span class="tag">01 — Pourquoi s'en occuper</span>
+  <h2>Un client vous cherche avant de vous appeler</h2>
+  <p>Avant de vous confier un chantier, la plupart des clients regardent votre page. Pas pour du contenu qui buzz — pour se rassurer : ce sont de vrais chantiers, du vrai travail, une vraie entreprise derrière.</p>
+  <ul>
+    <li><strong>La confiance se joue avant le devis.</strong> Des photos de chantiers réels valent plus qu'un site vitrine figé.</li>
+    <li><strong>Le bouche-à-oreille devient visible.</strong> Un client content qui vous tague ou vous recommande touche son propre réseau.</li>
+    <li><strong>Vous existez en dehors du bouche-à-oreille local.</strong> Ce qui élargit votre zone de chalandise sans prospection à froid.</li>
+  </ul>
+</section>
+
+<section class="card" id="reseau">
+  <span class="tag">02 — Quel réseau selon votre activité</span>
+  <h2>Pas besoin d'être partout</h2>
+  <p>Un seul réseau bien tenu vaut mieux que quatre à l'abandon. Voici comment choisir selon qui vous ciblez.</p>
+  <div class="reseau-grid">
+    <div class="reseau">
+      <span class="name">Facebook</span>
+      <p>Idéal pour toucher les particuliers de votre secteur : groupes de quartier, avis, recommandations locales. Le réseau le plus utilisé par vos clients directs.</p>
+    </div>
+    <div class="reseau">
+      <span class="name">Instagram</span>
+      <p>Le format le plus visuel : avant/après, chantier en cours, finitions. Parfait si votre travail se voit bien en photo (carrelage, peinture, aménagement).</p>
+    </div>
+    <div class="reseau">
+      <span class="name">LinkedIn</span>
+      <p>Pertinent si vous visez aussi les professionnels : promoteurs, architectes, syndics, autres entreprises du bâtiment pour de la sous-traitance.</p>
+    </div>
+    <div class="reseau">
+      <span class="name">TikTok</span>
+      <p>Utile pour toucher une clientèle plus jeune ou montrer un savoir-faire technique en vidéo courte (un geste, une astuce, un rendu).</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="quoi">
+  <span class="tag">03 — Quoi publier concrètement</span>
+  <h2>Vous avez déjà la matière</h2>
+  <p>Pas besoin d'inventer du contenu : votre chantier du jour en est déjà.</p>
+  <ul>
+    <li><strong>Avant / après.</strong> Le format qui convainc le plus — montrez la transformation, pas juste le résultat.</li>
+    <li><strong>Le chantier en cours.</strong> Une photo rapide pendant le travail montre le sérieux et la méthode.</li>
+    <li><strong>Le témoignage client.</strong> Une phrase du client, même courte, avec son accord.</li>
+    <li><strong>Les coulisses.</strong> Votre camion, votre équipe, un outil — ça humanise l'entreprise.</li>
+    <li><strong>Un conseil pratique.</strong> Une astuce liée à votre métier positionne votre expertise sans vendre directement.</li>
+  </ul>
+</section>
+
+<section class="card" id="rythme">
+  <span class="tag">04 — Le rythme réaliste</span>
+  <h2>Mieux vaut peu et régulier</h2>
+  <p>Trois publications par semaine suffisent largement — l'algorithme et vos clients préfèrent la régularité au volume.</p>
+  <div class="cadence">
+    <div class="day on">LUN</div>
+    <div class="day">MAR</div>
+    <div class="day on">MER</div>
+    <div class="day">JEU</div>
+    <div class="day on">VEN</div>
+    <div class="day">SAM</div>
+    <div class="day">DIM</div>
+  </div>
+</section>
+
+<section class="card" id="erreurs">
+  <span class="tag">05 — Les erreurs à éviter</span>
+  <h2>Ce qui fait fuir plus que ça n'attire</h2>
+  <div class="erreur">
+    <span class="x">✕</span>
+    <div><strong>Publier seulement quand ça va mal</strong><p>Une page silencieuse pendant des mois puis un coup de communication ponctuel ne construit pas la confiance.</p></div>
+  </div>
+  <div class="erreur">
+    <span class="x">✕</span>
+    <div><strong>Des photos floues ou mal cadrées</strong><p>Une photo prise à la va-vite depuis le téléphone dans la poche donne une image négligée du travail.</p></div>
+  </div>
+  <div class="erreur">
+    <span class="x">✕</span>
+    <div><strong>Ne jamais répondre aux commentaires</strong><p>Une question sans réponse est un client qui part voir ailleurs.</p></div>
+  </div>
+  <div class="erreur">
+    <span class="x">✕</span>
+    <div><strong>Vouloir être partout à la fois</strong><p>Trois réseaux à l'abandon valent moins qu'un seul tenu sérieusement.</p></div>
+  </div>
+</section>
+
+<div class="cta">
+  <span class="tag">Et si vous n'avez juste pas le temps</span>
+  <h2>Envoyez vos photos, on s'occupe du reste</h2>
+  <p>C'est exactement ce que fait Studio Créatif Digital pour des artisans comme vous : vous envoyez vos photos et vidéos de chantier par WhatsApp, on transforme ça en publications prêtes à poster, avec la méthode V.I.E. (Visibilité, Impact, Engagement).</p>
+  <div class="steps">
+    <div><b>1.</b> Vous envoyez vos photos/vidéos de chantier par WhatsApp</div>
+    <div><b>2.</b> On crée vos visuels et légendes, 3 posts/semaine</div>
+    <div><b>3.</b> Vous n'avez plus qu'à valider — ou même plus rien à faire</div>
+  </div>
+  <a href="https://wa.me/33683218905?text=Bonjour%2C%20j%27ai%20lu%20votre%20guide%20et%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20offres" class="whatsapp-btn" target="_blank" rel="noopener">Discuter sur WhatsApp →</a>
+</div>
+
+<footer>Studio Créatif Digital — Guide destiné aux artisans &amp; entreprises du BTP</footer>
+
+</body>
+</html>
