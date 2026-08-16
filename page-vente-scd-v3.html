@@ -462,3 +462,536 @@
     .trust {
       background: #eef9f8;
       
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .trust-card {
+      background: #ffffff;
+      border: 1px solid var(--bordure);
+      padding: 27px;
+      border-radius: 22px;
+    }
+
+    .trust-card p {
+      color: var(--texte);
+      margin-bottom: 0;
+    }
+
+    .faq {
+      background: #ffffff;
+    }
+
+    .faq-list {
+      max-width: 830px;
+      margin: 30px auto 0;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--bordure);
+      padding: 19px 0;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .faq-item p {
+      color: var(--texte);
+      margin: 13px 0 0;
+    }
+
+    .final {
+      padding: 78px 0;
+      background: linear-gradient(130deg, var(--bleu-fonce), var(--bleu));
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .final h2 {
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      line-height: 1.08;
+      margin: 0;
+    }
+
+    .final p {
+      color: #cae8e6;
+      max-width: 620px;
+      margin: 17px auto 26px;
+    }
+
+    .final .button {
+      background: var(--vert-clair);
+      color: var(--bleu-fonce);
+    }
+
+    .footer {
+      padding: 27px 0;
+      background: #062832;
+      color: #bed8d6;
+      font-size: 0.9rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 880px) {
+      .hero-grid,
+      .option,
+      .trust-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards,
+      .pillars {
+        grid-template-columns: 1fr;
+      }
+
+      .prices {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .option-price {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 28px, 1140px);
+      }
+
+      .hero h1 {
+        font-size: 2.45rem;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .proof span {
+        display: block;
+        margin: 8px 0;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="top">
+    <div class="container nav">
+      <a class="brand" href="#accueil">
+        Studio <span>Créatif</span> Digital
+      </a>
+
+      <a class="button"
+         href="https://wa.me/33683218905?text=Bonjour%20S%C3%A9bastien%2C%20je%20souhaite%20%C3%A9changer%20sur%20ma%20visibilit%C3%A9%20en%20ligne."
+         target="_blank">
+        Nous contacter ↗
+      </a>
+    </div>
+  </header>
+
+  <main id="accueil">
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+          <span class="eyebrow">Artisans · BTP · PME · France</span>
+
+          <h1>
+            Votre métier, on gère
+            <strong>votre visibilité.</strong>
+          </h1>
+
+          <p class="lead">
+            Pendant que vous êtes sur le terrain, Studio Créatif Digital crée et publie du contenu professionnel pour mettre votre savoir-faire en valeur sur les réseaux sociaux.
+          </p>
+
+          <div class="actions">
+            <a class="button"
+               href="https://wa.me/33683218905?text=Bonjour%20S%C3%A9bastien%2C%20je%20souhaite%20parler%20de%20mes%20r%C3%A9seaux%20sociaux."
+               target="_blank">
+              Parler de mon projet sur WhatsApp ↗
+            </a>
+
+            <a class="button button-blanc" href="#offres">
+              Voir les formules
+            </a>
+          </div>
+
+          <div class="proof">
+            <span>Sans engagement minimum</span>
+            <span>Validation avant publication</span>
+            <span>Accompagnement partout en France</span>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <span class="eyebrow">Un seul interlocuteur</span>
+
+          <h2>Une présence en ligne claire, régulière et professionnelle.</h2>
+
+          <p>
+            LinkedIn, Facebook, Instagram et TikTok : on sélectionne les réseaux utiles pour votre activité et vos futurs clients.
+          </p>
+
+          <ul class="mini-list">
+            <li>Visuels et textes adaptés à votre métier</li>
+            <li>Planning et publication pris en charge</li>
+            <li>Échanges simples par WhatsApp</li>
+          </ul>
+        </aside>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <span class="section-tag">Le constat</span>
+
+        <h2 class="section-title">
+          Vous avez un vrai savoir-faire. Il mérite d’être vu.
+        </h2>
+
+        <p class="section-intro">
+          Entre les chantiers, les clients et l’administratif, publier régulièrement passe souvent au second plan. Résultat : une présence en ligne peu active, alors que vos réalisations sont votre meilleure preuve de qualité.
+        </p>
+
+        <div class="cards">
+
+          <article class="card">
+            <h3>⏱️ Manque de temps</h3>
+            <p>Vous n’avez pas à écrire, créer et programmer des publications après vos journées de travail.</p>
+          </article>
+
+          <article class="card">
+            <h3>📸 Image peu valorisée</h3>
+            <p>Vos réalisations, vos équipes et votre expertise deviennent des contenus clairs et professionnels.</p>
+          </article>
+
+          <article class="card">
+            <h3>💬 Demandes mieux suivies</h3>
+            <p>Vos futurs clients trouvent plus facilement les bonnes informations et savent comment vous contacter.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="method">
+      <div class="container">
+
+        <span class="section-tag" style="color:#56d6a5">La méthode</span>
+
+        <h2 class="section-title">
+          Une communication simple, pensée pour les professionnels du terrain.
+        </h2>
+
+        <p class="section-intro">
+          Chaque accompagnement repose sur trois piliers : montrer ce que vous faites, expliquer pourquoi vous le faites bien et faciliter le contact.
+        </p>
+
+        <div class="pillars">
+
+          <article class="pillar">
+            <div class="number">01 — VISIBILITÉ</div>
+            <h3>Être vu</h3>
+            <p>Des publications régulières sur les réseaux adaptés à votre cible : LinkedIn, Facebook, Instagram ou TikTok.</p>
+          </article>
+
+          <article class="pillar">
+            <div class="number">02 — IMPACT</div>
+            <h3>Être compris</h3>
+            <p>Photos, visuels et légendes qui rendent votre expertise accessible, rassurante et mémorable.</p>
+          </article>
+
+          <article class="pillar">
+            <div class="number">03 — ENGAGEMENT</div>
+            <h3>Être contacté</h3>
+            <p>Des appels à l’action clairs pour encourager les messages, les demandes de devis et les prises de rendez-vous.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="offers" id="offres">
+      <div class="container">
+
+        <span class="section-tag">Les formules</span>
+
+        <h2 class="section-title">
+          Choisissez le niveau d’accompagnement adapté à votre activité.
+        </h2>
+
+        <p class="section-intro">
+          Des formules mensuelles, sans engagement minimum. Les contenus sont préparés pour validation avant leur mise en ligne.
+        </p>
+
+        <div class="prices">
+
+          <article class="price">
+            <h3>Starter</h3>
+            <p class="sub">Pour démarrer sereinement</p>
+
+            <div class="amount">249€</div>
+            <p class="monthly">/ mois · sans engagement</p>
+
+            <ul class="features">
+              <li>3 posts/semaine sur 1 réseau</li>
+              <li>Visuels professionnels</li>
+              <li>Légendes copywritées</li>
+              <li>Rapport mensuel</li>
+              <li>Suivi WhatsApp</li>
+            </ul>
+
+            <a class="button button-blanc"
+               href="https://wa.me/33683218905?text=Bonjour%20S%C3%A9bastien%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20la%20formule%20Starter%20%C3%A0%20249%E2%82%AC%2Fmois."
+               target="_blank">
+              Je démarre ↗
+            </a>
+          </article>
+
+          <article class="price featured">
+            <div class="badge">★ LE PLUS POPULAIRE</div>
+
+            <h3>Standard</h3>
+            <p class="sub">Pour accélérer votre croissance</p>
+
+            <div class="amount">499€</div>
+            <p class="monthly">/ mois · sans engagement</p>
+
+            <ul class="features">
+              <li>5 posts/semaine sur 2 réseaux</li>
+              <li>Visuels premium et stories</li>
+              <li>Stratégie éditoriale mensuelle</li>
+              <li>Rapport bi-mensuel</li>
+              <li>Réponses aux commentaires incluses</li>
+              <li>Appel stratégique mensuel</li>
+            </ul>
+
+            <a class="button"
+               href="https://wa.me/33683218905?text=Bonjour%20S%C3%A9bastien%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20la%20formule%20Standard%20%C3%A0%20499%E2%82%AC%2Fmois."
+               target="_blank">
+              Je choisis Standard ↗
+            </a>
+          </article>
+
+          <article class="price">
+            <h3>Premium</h3>
+            <p class="sub">La solution tout-en-un</p>
+
+            <div class="amount">849€</div>
+            <p class="monthly">/ mois · sans engagement</p>
+
+            <ul class="features">
+              <li>Posts quotidiens sur 3 réseaux</li>
+              <li>Vidéos courtes et Reels</li>
+              <li>Agent IA devis WhatsApp inclus</li>
+              <li>Reporting complet hebdomadaire</li>
+              <li>Community management complet</li>
+              <li>Accès prioritaire et support dédié</li>
+            </ul>
+
+            <a class="button button-blanc"
+               href="https://wa.me/33683218905?text=Bonjour%20S%C3%A9bastien%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20la%20formule%20Premium%20%C3%A0%20849%E2%82%AC%2Fmois."
+               target="_blank">
+              Je veux le Premium ↗
+            </a>
+          </article>
+
+        </div>
+
+        <div class="option">
+
+          <div>
+            <span class="eyebrow">Nouveauté IA</span>
+            <h3>Agent IA Réponse Devis</h3>
+
+            <p>
+              Votre assistant répond aux demandes reçues sur WhatsApp ou votre site, 24h/24 et 7j/7. Il peut recueillir les premières informations nécessaires avant votre retour.
+            </p>
+          </div>
+
+          <div class="option-price">
+            <strong>199€</strong>
+            <span>/ mois · en option sur Starter et Standard</span>
+
+            <div style="margin-top:17px">
+              <a class="button"
+                 href="https://wa.me/33683218905?text=Bonjour%20S%C3%A9bastien%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20l%27Agent%20IA%20R%C3%A9ponse%20Devis."
+                 target="_blank">
+                En savoir plus ↗
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <div class="container">
+
+        <span class="section-tag">Comment ça marche</span>
+
+        <h2 class="section-title">
+          Un démarrage simple, sans vous faire perdre du temps.
+        </h2>
+
+        <div class="steps">
+
+          <article class="step">
+            <b>Étape 1</b>
+            <h3>Premier échange</h3>
+            <p>Un message ou un appel pour comprendre votre métier, vos besoins et vos objectifs.</p>
+          </article>
+
+          <article class="step">
+            <b>Étape 2</b>
+            <h3>Brief de lancement</h3>
+            <p>Nous définissons votre activité, vos offres, votre clientèle cible et les réseaux prioritaires.</p>
+          </article>
+
+          <article class="step">
+            <b>Étape 3</b>
+            <h3>Création et validation</h3>
+            <p>Vous recevez vos propositions de contenu. Rien n’est publié sans votre accord.</p>
+          </article>
+
+          <article class="step">
+            <b>Étape 4</b>
+            <h3>Publication et suivi</h3>
+            <p>Vos contenus sont programmés, publiés et suivis pendant que vous restez concentré sur votre travail.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="trust">
+      <div class="container">
+
+        <span class="section-tag">Un accompagnement clair</span>
+
+        <h2 class="section-title">
+          Pas de promesses irréalistes. Du contenu utile et une présence suivie.
+        </h2>
+
+        <div class="trust-grid">
+
+          <article class="trust-card">
+            <h3>Ce que vous recevez</h3>
+            <p>
+              Une organisation éditoriale, des contenus cohérents avec votre activité, des échanges directs sur WhatsApp et des points de suivi adaptés à votre formule.
+            </p>
+          </article>
+
+          <article class="trust-card">
+            <h3>Notre engagement</h3>
+            <p>
+              Vous restez propriétaire des contenus créés pour votre entreprise. Vous gardez la main sur les validations et vous pouvez arrêter l’accompagnement avec un préavis de 15 jours.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container">
+
+        <span class="section-tag">Questions fréquentes</span>
+
+        <h2 class="section-title">
+          Tout ce qu’il faut savoir avant de démarrer.
+        </h2>
+
+        <div class="faq-list">
+
+          <details class="faq-item">
+            <summary>Y a-t-il un engagement minimum ?</summary>
+            <p>Non. Les formules sont sans engagement minimum. Vous pouvez arrêter avec un préavis de 15 jours.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Dois-je valider les publications ?</summary>
+            <p>Oui. Les contenus vous sont proposés avant diffusion. Rien n’est publié sans votre accord.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Sur quels réseaux travaillez-vous ?</summary>
+            <p>Selon la formule et votre cible : LinkedIn, Facebook, Instagram et TikTok.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Est-ce possible si je suis partout en France ?</summary>
+            <p>Oui. L’accompagnement se fait à distance avec des échanges par WhatsApp, visio et email.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Que fait exactement l’agent IA devis ?</summary>
+            <p>Il répond aux messages entrants selon les informations configurées avec vous et recueille les éléments utiles à une première qualification.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Les contenus créés m’appartiennent-ils ?</summary>
+            <p>Oui. Les visuels, textes et vidéos créés dans le cadre de votre accompagnement restent à votre entreprise.</p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="container">
+
+        <h2>Prêt à mieux montrer votre savoir-faire ?</h2>
+
+        <p>
+          Échangeons simplement sur votre activité et sur la formule la plus adaptée. Premier contact gratuit, sans engagement.
+        </p>
+
+        <a class="button"
+           href="https://wa.me/33683218905?text=Bonjour%20Sébastien%2C%20je%20souhaite%20échanger%20sur%20ma%20visibilité%20en%20ligne."
+           target="_blank">
+          Nous contacter sur WhatsApp ↗
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© 2026 Studio Créatif Digital</span>
+      <span>Artisans · BTP · PME · France</span>
+    </div>
+  </footer>
+
+</body>
+</html>
+
